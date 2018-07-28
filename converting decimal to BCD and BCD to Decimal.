@@ -1,0 +1,17 @@
+int BCDToDecimal(char bcdByte)
+{
+       char a,b,dec;
+    a=(((bcdByte & 0xF0) >> 4) * 10);
+    b=(bcdByte & 0x0F);
+    dec=a+b;
+    return dec;
+}
+
+char DecimalToBCD (int decimalByte)
+{
+  char a,b,bcd;
+  a=((decimalByte / 10) << 4);
+  b= (decimalByte % 10);
+  bcd=a|b;
+  return bcd;
+}
