@@ -1,0 +1,15 @@
+I2CStart();
+  I2CSend(0xD0);
+  I2CSend(0x00);
+  I2CStart();
+  I2CSend(0xD1);
+  sec=BCDToDecimal(I2CRead(1));
+  min=BCDToDecimal(I2CRead(1));
+  hour=BCDToDecimal(I2CRead(1));
+  day1=BCDToDecimal(I2CRead(1));
+  date=BCDToDecimal(I2CRead(1));
+  mon=BCDToDecimal(I2CRead(1));
+  year=BCDToDecimal(I2CRead(1));
+  I2CStop();
+   show_time();                                          
+   delay(1);
