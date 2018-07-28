@@ -1,0 +1,24 @@
+void show_time()                         
+{
+  char var[5];
+  lcdcmd(0x80);
+  lcdprint("Date:");
+  sprintf(var,"%d",date);
+  lcdprint(var);
+  sprintf(var,"/%d",mon);
+  lcdprint(var);
+  sprintf(var,"/%d",year+2000);
+  lcdprint(var);
+  lcdprint("   ");
+  lcdcmd(0xc0);
+  lcdprint("Time:");
+  sprintf(var,"%d",hour);
+  lcdprint(var);
+  sprintf(var,":%d",min);
+  lcdprint(var);
+  sprintf(var,":%d",sec);
+  lcdprint(var);
+  lcdprint(" ");
+  // day(day1);
+   lcdprint("   ");
+ }
