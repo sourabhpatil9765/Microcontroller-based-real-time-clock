@@ -1,0 +1,26 @@
+#include<reg51.h>
+#include<stdio.h>
+#define lcdport P1
+
+sbit rs=P1^0;
+sbit en=P1^1;
+
+sbit SDA=P2^1;              
+sbit SCL=P2^0;
+
+sbit next=P2^2;                   
+sbit inc=P2^3;                    
+sbit set=P2^4;                     
+
+char ack;
+unsigned char day1=1;
+unsigned char k,x;
+unsigned int date=1, mon=1, hour=0, min=0, sec=0;
+int year=0; 
+
+ void delay(int itime)
+{
+    int i,j;
+    for(i=0;i<itime;i++)
+    for(j=0;j<1275;j++);
+}
