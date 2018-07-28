@@ -1,0 +1,25 @@
+void daten()
+{
+    rs=1;
+    en=1;
+    delay(1);
+    en=0;
+}
+
+void lcddata(unsigned char ch)
+{
+    lcdport=ch & 0xf0;
+    daten();
+    lcdport=(ch<<4) & 0xf0;
+    daten();
+}
+
+void cmden(void)
+{
+    rs=0;
+    en=1;
+    delay(1);
+    en=0;
+}
+
+void lcdcmd(unsigned char ch)
